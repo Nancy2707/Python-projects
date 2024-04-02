@@ -20,7 +20,7 @@ if len(email)>=6:
                     elif i.isalpha():
                         if i==i.upper():
                             j=1
-# if it contains digit then the loop should be continue                            
+# If it contains digit then the loop should be continue                            
                     elif i.isdigit():
                         continue
 # only special character "_",".","@"
@@ -40,3 +40,12 @@ if len(email)>=6:
     print("Valid Email")
 else:
     print("Invalid email 1")
+#using Regex for Email validation
+import re
+email_condition="^[a-z]+[\._]?[a-z 0-9]+[@]\w+[.]\w{2,3}$"
+user_email=input("Enter the email")
+if re.search(email_condition,user_email):
+    print("right email")
+else:
+    print("wrong email")
+    
