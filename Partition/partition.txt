@@ -1,0 +1,16 @@
+def partition(n):
+    # Initialize a list to store partitions
+    partitions = [[1] + [0] * n for _ in range(n + 1)]
+    
+    for i in range(1, n + 1):
+        for j in range(1, n + 1):
+            if i >= j:
+                partitions[i][j] = partitions[i - j][j] + partitions[i][j - 1]
+            else:
+                partitions[i][j] = partitions[i][i - 1]
+    
+    return partitions[n][n]
+
+# Example usage:
+number = 5
+print("Number of partitions for", number, ":", partition(number))
