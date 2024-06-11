@@ -9,6 +9,7 @@ print("Welcom to Python Restaurants:");
 print("Our Menu:");
 print("Pizza:40\nPasta:50\nBurger:60\nSalad:70\nCoffee:80\n");
 order_total=0
+item_2="";
 item_1=input("Enter the item you want to add:")
 if item_1 in menu:
     order_total+=menu[item_1]
@@ -23,6 +24,11 @@ if another_item=="Yes":
         print("Your item has been added to the order");
     else:
         print("Ordered item is not currently available!!");
+else:
+    item_2=="";
 print("total bill:",order_total);
-print("Ordered Items:",item_1,"and",item_2);
+if (item_2!=""):
+    print("Ordered Items:",item_1,"and",item_2);
+else:
+    print("Ordered Items:",item_1);
 print("Thanks for the Order Visit Again")
